@@ -1,6 +1,8 @@
 Tämän hetkiset versiot kaatuvat jos asrvostelut yritetään siirtää tiedostoon. Muuten pitäisi toimia
 
-Korjatut versiot tulevat lähiaikoina
+MAC versio päivitetty toimivaan, Windows versiota pitää vielä odottaa
+
+
 
 Lähdekoodi sitten kun se on hyväksyttävässä muodossa
 
