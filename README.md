@@ -1,1 +1,5 @@
-PunaKynän Windows ja Mac versiot tulevat tänne lähiaikoina, ja lähdetiedostot pian sen jälkeen
+Tämän hetkiset versiot kaatuvat jos asrvostelut yritetään siirtää tiedostoon. Muuten pitäisi toimia
+
+Korjatut versiot tulevat lähiaikoina
+
+Lähdekoodi sitten kun se on hyväksyttävässä muodossa
