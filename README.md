@@ -3,3 +3,5 @@ Tämän hetkiset versiot kaatuvat jos asrvostelut yritetään siirtää tiedosto
 Korjatut versiot tulevat lähiaikoina
 
 Lähdekoodi sitten kun se on hyväksyttävässä muodossa
+
+Käyttöhjeet lisätään myös lähitulevaisuudessa
