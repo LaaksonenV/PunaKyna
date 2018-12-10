@@ -1,5 +1,5 @@
 #!/bin/sh
-appname=`basename $0 | sed s,\.sh$,,`
+appname=`pdftotext.exe`
 
 dirname=`dirname $0`
 tmp="${dirname#?}"
