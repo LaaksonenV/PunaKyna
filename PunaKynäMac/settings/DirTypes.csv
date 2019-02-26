@@ -1,0 +1,9 @@
+Name,ids,disp,url
+EXAM,\(eid),,https://exam.tut.fi/exams/reviews/\(eid)
+,\(qid),,
+,\(sid)-\(aid),,https://exam.tut.fi/exams/review/\(aid)
+,,,
+Moodle,\(eid)-\(qid),,
+,\(sid)_\(aid)_assgn,,
+,,,
+,,,
