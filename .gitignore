@@ -1,13 +1,13 @@
 # C++ objects and libs
-*.slo
-*.lo
-*.o
-*.a
-*.la
-*.lai
-*.so
-*.dll
-*.dylib
+#*.slo
+#*.lo
+#*.o
+#*.a
+#*.la
+#*.lai
+#*.so
+#*.dll
+#*.dylib
 
 # Qt-es
 object_script.*.Release
