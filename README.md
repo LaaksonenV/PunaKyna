@@ -1,13 +1,12 @@
 HUOM 1.8! Uusimmassa versiossa settings.ini on siirretty omaan kansioonsa, johon kerääntyy muita vastaavia tiedostoja. Jos haluat säilyttää vanhat asetukset, siirrä vanha .ini tiedosto 'settings' kansioon, mutta HUOMaa, että aikaisempien tenttien asetukset eivät enää vastaa uuden version tarpeita, joten ne kannattaa poistaa settings.ini tiedostosta käsin
 
 HUOM !!! Siirrän mac ja win versiot punakynästä omiin brancheihin, master-branch päivittyy sitten omalla ajallaan, mutta tuskin kukaan haluaa ladata molempien käyttöjärjestelmien tiedostoja samalle koneelle kuitenkaan... 
-Tämäkin on vain väliaikainen ratkaisu, jaan tiedostot paremmin latauskuntoon kunhan kerkiän
+Tämäkin on vain väliaikainen ratkaisu, jaan tiedostot paremmin gitin latauskuntoon kunhan kerkiän selvittämään sen toiminnan
 
 HUOM WINDOWS, käytössä on jotain ongelmia, jotka esiintyvät joillain koneilla, mutta ei toisilla. Jos esimerkisi pdf-vastaukset zoomautuvat liikaa, kokeile toisella koneella. Jos PK toimii oikein yhdessä koneessa mutta ei toisessa, niin pyydän kertomaan tästä, ja koneiden mahdollisista eroista. Ongelma korjataan jos sen syy saadaan joskus selville.
 
 HUOM MAC, uusimmissa QT-versioissa on ongelmia tunnistaa ääkkösiä tiedostonimissä. Finderin kautta kirjoitetut ääkköset toimivat normaalisti, mutta terminaalin kautta (ja oletettavasti muista järjestelmistä) kirjoitetut tiedostonimet eivät näy QDirille.
 
-Lähdekoodi tulee sitten kun se on hyväksyttävässä kunnossa
 
 # PunaKynä - Matematiikan tehtävien/Sähköisten tenttien automaattitarkastaja
 
