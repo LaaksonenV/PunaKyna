@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 # App Versioning
-VERSION_VERY_VERY_MINOR = 1
+VERSION_VERY_VERY_MINOR = 2
 VERSION_VERY_MINOR = 0
 VERSION_MINOR = 8
 VERSION_MAJOR = 1

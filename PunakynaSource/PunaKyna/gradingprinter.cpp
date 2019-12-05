@@ -35,7 +35,8 @@ void GradingPrinter::exportToGrading(QString fileName)
         QMessageBox::critical(nullptr, tr("Lokalisointi ongelma"),
                               tr("Moodlen lokalisointi ei toimi kuin pitäisi."
                                  "Arviointitiedosto pitää ladata ja palauttaa "
-                                 "englanninkielisellä Moodlella."));
+                                 "englanninkielisellä Moodlella."
+                                 "TILANNE ON TARKISTUKSEN ALLA"));
         return;
     }
 
