@@ -23,6 +23,8 @@ public:
 
     QString getText();
 
+    void resetState();
+
 public slots:
     void setDisplayFile(const QString &file);
 
@@ -50,6 +52,8 @@ private:
     QPdfDocument *_pdfDoc;
 
     QString _popplerLoc;
+
+    bool _stopSignal;
 };
 
 #endif // DISPLAYWIDGETCREATOR_H

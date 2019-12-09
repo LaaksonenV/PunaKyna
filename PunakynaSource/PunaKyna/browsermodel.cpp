@@ -108,7 +108,22 @@ BrowserModel::BrowserModel(Settings *set, QObject *parent)
                ",,,";
         dirtype.close();
     }
+
     _dirForm = new CSVParser(dirtypeloc);
+
+    // Temporary fix for problems possibly due to folder permissions, just another dirty secondary implementation of default information
+    if (!_dirForm->rowCount())
+    {
+        _dirForm->addRow(QStringList("Name")<<"ids"<<"disp"<<"url");
+        _dirForm->addRow(QStringList("EXAM")<<"\\(eid)"<<""<<"https://exam.tut.fi/exams/reviews/\\(eid)");
+        _dirForm->addRow(QStringList("")<<"\\(qid)"<<""<<"");
+        _dirForm->addRow(QStringList("")<<"\\(sid)-\\(aid)"<<""<<"https://exam.tut.fi/exams/review/\\(aid)");
+        _dirForm->addRow(QStringList("")<<""<<""<<"");
+        _dirForm->addRow(QStringList("Moodle")<<"\\(eid)-\\(qid)"<<""<<"");
+        _dirForm->addRow(QStringList("")<<"\\(sid)_\\(aid)_assign"<<""<<"");
+        _dirForm->addRow(QStringList("")<<""<<""<<"");
+        _dirForm->addRow(QStringList("")<<""<<""<<"");
+    }
 }
 
 /*!
@@ -403,6 +418,8 @@ int BrowserModel::indexCount(Indexer of)
     return 0;
 }
 
+
+//TODO
 QStringList BrowserModel::getExamTypes()
 {
     QStringList ret;
@@ -606,8 +623,11 @@ bool BrowserModel::populateDirectories(QDir &dir, QString type)
         return false;
     }
     */
-    
-    int row = _dirForm->findRow(type, 0, 1);
+    int row = 0;
+    if (_dirForm)
+    {
+        row = _dirForm->findRow(type, 0, 1);
+    }
     QMap<QString, Directory *> Qs;
     QStringList ids;
     for (int i = 0; i < 4; ++i)

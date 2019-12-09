@@ -384,7 +384,7 @@ QString MainWindow::createText(const QString &fileName)
     {
         text = _display->createText(fileName);
 
-        if(fl.open(QFile::Text | QFile::WriteOnly))
+        if(!text.isEmpty() && fl.open(QFile::Text | QFile::WriteOnly))
         {
             QTextStream str(&fl);
             str.setCodec("UTF-8");
@@ -425,6 +425,7 @@ CSVParser *MainWindow::fitTemplate(Indexer &ind)
         return nullptr;
 
     QString file = createText(filen);
+    _display->resetState();
     file = file.simplified();
 
     QStringList texts;
@@ -610,6 +611,7 @@ void MainWindow::on_auto_some()
         delete tmpl;
         ind.answ = -1;
     }
+    _display->resetState();
 }
 
 void MainWindow::on_auto_all()
@@ -652,6 +654,9 @@ void MainWindow::on_auto_all()
         }
         ind.quest = -1;
     }
+
+    _display->resetState();
+
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *e)

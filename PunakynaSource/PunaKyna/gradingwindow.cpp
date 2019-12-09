@@ -342,7 +342,7 @@ QString GradingWindow::searchFilePath(const QString &file, QChar type, bool *fou
         ret = _settings->getValue(Settings::Section_Folders, "defaultexam");
         if (ret.isEmpty())
         {
-        QFileDialog dial(NULL, tr("Valitse tenttilokien kansio"),
+        QFileDialog dial(nullptr, tr("Valitse tenttilokien kansio"),
                          dir.absolutePath());
         dial.setFileMode(QFileDialog::Directory);
         dial.setLabelText(QFileDialog::Accept, tr("Valitse tenttilokien"
@@ -358,7 +358,7 @@ QString GradingWindow::searchFilePath(const QString &file, QChar type, bool *fou
         ret = _settings->getValue(Settings::Section_Folders, "defaultquestion");
         if (ret.isEmpty())
         {
-        QFileDialog dial(NULL, tr("Valitse kysymystiedostojen kansio"),
+        QFileDialog dial(nullptr, tr("Valitse kysymystiedostojen kansio"),
                          dir.absolutePath());
         dial.setFileMode(QFileDialog::Directory);
         dial.setLabelText(QFileDialog::Accept, tr("Valitse kysymystiedostojen"

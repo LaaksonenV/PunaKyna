@@ -31,6 +31,7 @@ DisplayWidget::DisplayWidget(Settings *set, QWidget *parent)
     , _htmlWindow(nullptr)
     , _pdfDoc(nullptr)
     , _popplerLoc()
+    , _stopSignal(false)
 {
 
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -40,6 +41,11 @@ DisplayWidget::DisplayWidget(Settings *set, QWidget *parent)
 QString DisplayWidget::createText(const QString &fileName)
 {
     QString s;
+
+    if (_stopSignal)
+    {
+        return QString();
+    }
 
     if (fileName.endsWith(".pdf"))
     {
@@ -133,7 +139,6 @@ QString DisplayWidget::createText(const QString &fileName)
 
     return s;
 
-
 }
 
 void DisplayWidget::on_Proc_err(QProcess::ProcessError err)
@@ -157,11 +162,17 @@ void DisplayWidget::on_Proc_err(QProcess::ProcessError err)
                               tr("Yritä tarkistusta uudelleen. Jos poppler"
                                  " lakkaa toimimasta uudestaan, ilmoita"
                                  " ylläpitäjälle."));
+    _stopSignal = true;
 }
 
 QString DisplayWidget::getText()
 {
     return createText(_file);
+}
+
+void DisplayWidget::resetState()
+{
+    _stopSignal = false;
 }
 
 void DisplayWidget::setDisplayFile(const QString &file)
