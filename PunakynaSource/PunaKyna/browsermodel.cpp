@@ -97,15 +97,15 @@ BrowserModel::BrowserModel(Settings *set, QObject *parent)
     if (!dirtype.exists() && dirtype.open(QFile::WriteOnly))
     {
         QTextStream str(&dirtype);
-        str << "Name,ids,disp,url"
-               "EXAM,\\(eid),,https://exam.tut.fi/exams/reviews/\\(eid)"
-               ",\\(qid),,"
-               ",\\(sid)-\\(aid),,https://exam.tut.fi/exams/review/\\(aid)"
-               ",,,"
-               "Moodle,\\(eid)-\\(qid),,"
-               ",\\(sid)_\\(aid)_assign,,"
-               ",,,"
-               ",,,";
+        str << "Name,ids,disp,url\n"
+               "EXAM,\\(eid),,https://exam.tut.fi/exams/reviews/\\(eid)\n"
+               ",\\(qid),,\n"
+               ",\\(sid)-\\(aid),,https://exam.tut.fi/exams/review/\\(aid)\n"
+               ",,,\n"
+               "Moodle,\\(eid)-\\(qid),,\n"
+               ",\\(sid)_\\(aid)_assign,,\n"
+               ",,,\n"
+               ",,,\n";
         dirtype.close();
     }
 
