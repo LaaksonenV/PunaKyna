@@ -19,6 +19,8 @@ class DisplayWidget : public QScrollArea
 public:
     explicit DisplayWidget(Settings *set, QWidget *parent = nullptr);
 
+    void korjaanakyma(bool a);
+
     QString createText(const QString &fileName);
 
     QString getText();
@@ -54,6 +56,7 @@ private:
     QString _popplerLoc;
 
     bool _stopSignal;
+    bool _nakyma;
 };
 
 #endif // DISPLAYWIDGETCREATOR_H

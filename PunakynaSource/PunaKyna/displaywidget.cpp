@@ -32,10 +32,16 @@ DisplayWidget::DisplayWidget(Settings *set, QWidget *parent)
     , _pdfDoc(nullptr)
     , _popplerLoc()
     , _stopSignal(false)
+    , _nakyma(false)
 {
 
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     _busy = false;
+}
+
+void DisplayWidget::korjaanakyma(bool a)
+{
+    _nakyma = a;
 }
 
 QString DisplayWidget::createText(const QString &fileName)
@@ -324,6 +330,10 @@ void DisplayWidget::handlePdf(const QString &file)
     setWidget(window);
     show();
     window->setZoomWindowWidth();
+    if (_nakyma)
+    {
+        window->setZoom(window->zoom()*0.8);
+    }
     emit widgetReady();
 }
 

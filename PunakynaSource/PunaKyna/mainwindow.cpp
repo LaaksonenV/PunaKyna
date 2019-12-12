@@ -185,6 +185,11 @@ MainWindow::MainWindow(Settings *set, QWidget *parent)
     connect(act, &QAction::triggered,
             this, &MainWindow::on_about);
 
+    act = menuBar()->addAction(tr("Näkymän korjaus"));
+    act->setCheckable(true);
+    connect(act, &QAction::toggled,
+            _display, &DisplayWidget::korjaanakyma);
+
     QScreen *scr = QGuiApplication::primaryScreen();
     QSize windowSize = scr->availableSize();
     resize(windowSize);
