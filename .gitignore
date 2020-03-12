@@ -2,5 +2,5 @@
 *.DS_Store
 *.user*
 */build*
-PunakynaSource/PunaKynaDebug*
-PunakynaSource/PunaKynaRelease*
+PunaKynaDebug*
+PunaKynaRelease*
