@@ -100,10 +100,10 @@ BrowserModel::BrowserModel(Settings *set, QObject *parent)
         str << "Name,ids,disp,url\n"
                "EXAM,\\(eid),,https://exam.tut.fi/exams/reviews/\\(eid)\n"
                ",\\(qid),,\n"
-               ",\\(sid)-\\(aid),,https://exam.tut.fi/exams/review/\\(aid)\n"
+               ",\\(sid)-\\(aid),\\(sid),https://exam.tut.fi/exams/review/\\(aid)\n"
                ",,,\n"
                "Moodle,\\(eid)-\\(qid),,\n"
-               ",\\(sid)_\\(aid)_assign,,\n"
+               ",\\(sid)_\\(aid)_assign,\\(sid),\n"
                ",,,\n"
                ",,,\n";
         dirtype.close();
@@ -117,10 +117,10 @@ BrowserModel::BrowserModel(Settings *set, QObject *parent)
         _dirForm->addRow(QStringList("Name")<<"ids"<<"disp"<<"url");
         _dirForm->addRow(QStringList("EXAM")<<"\\(eid)"<<""<<"https://exam.tut.fi/exams/reviews/\\(eid)");
         _dirForm->addRow(QStringList("")<<"\\(qid)"<<""<<"");
-        _dirForm->addRow(QStringList("")<<"\\(sid)-\\(aid)"<<""<<"https://exam.tut.fi/exams/review/\\(aid)");
+        _dirForm->addRow(QStringList("")<<"\\(sid)-\\(aid)"<<"\\(sid)"<<"https://exam.tut.fi/exams/review/\\(aid)");
         _dirForm->addRow(QStringList("")<<""<<""<<"");
         _dirForm->addRow(QStringList("Moodle")<<"\\(eid)-\\(qid)"<<""<<"");
-        _dirForm->addRow(QStringList("")<<"\\(sid)_\\(aid)_assign"<<""<<"");
+        _dirForm->addRow(QStringList("")<<"\\(sid)_\\(aid)_assign"<<"\\(sid)"<<"");
         _dirForm->addRow(QStringList("")<<""<<""<<"");
         _dirForm->addRow(QStringList("")<<""<<""<<"");
     }

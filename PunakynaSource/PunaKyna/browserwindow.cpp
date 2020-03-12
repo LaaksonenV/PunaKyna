@@ -82,7 +82,7 @@ QWidget *BrowserWindow::createFilterWidget()
     lay->addWidget(new QLabel(tr("Suodata:")));
 
     QComboBox *filterType = new QComboBox();
-    filterType->addItem("");
+    filterType->addItem(tr("Näytä kaikki"));
     filterType->addItem(tr("Katsomattomat"));
     QFont ffont;
     ffont.setBold(true);
@@ -94,6 +94,7 @@ QWidget *BrowserWindow::createFilterWidget()
     filterType->addItem(QIcon(":/icons/arch"), tr("Valmiit"));
     filterType->addItem(tr("Opiskelijan numerolla"));
     filterType->addItem(tr("Kysymyksen numerolla"));
+    filterType->addItem(tr("Tunnistenumerolla"));
 
 
     connect(filterType, SIGNAL(currentIndexChanged(int)),
@@ -102,7 +103,7 @@ QWidget *BrowserWindow::createFilterWidget()
     lay->addWidget(filterType);
 
     _filterField = new QLineEdit();
-    _filterField->setEnabled(false);
+    _filterField->setHidden(true);
     connect(_filterField, &QLineEdit::textChanged,
             this, &BrowserWindow::on_filterChange);
 
@@ -123,7 +124,9 @@ void BrowserWindow::on_filterTypeChange(int ind)
 
     _filterType = ind;
 
-    // unless filtering by text, filtering is activated when selecting condition
+    QString text = "";
+
+/*    // unless filtering by text, filtering is activated when selecting condition
     if (ind == 0)
         showAll(_view->topLevelItem(0));
     else if (ind == 1)
@@ -138,14 +141,27 @@ void BrowserWindow::on_filterTypeChange(int ind)
         showAll(_view->topLevelItem(0), "locked");
     else if (ind == 6)
         showAll(_view->topLevelItem(0), "completed");
+  */
+    if (ind == 1)
+        text = "unviewed";
+    else if (ind == 2)
+        text = "uncommented";
+    else if (ind == 3)
+        text = "conflicting";
+    else if (ind == 4)
+        text = "commented";
+    else if (ind == 5)
+        text = "locked";
+    else if (ind == 6)
+        text = "completed";
 
-/*    if (ind > 7)
+    if (ind >= 7)
         _filterField->setHidden(false);
     else
-    {
-        _filterField->clear();
         _filterField->setHidden(true);
-    }*/
+
+    _filterField->setText(text);
+
 }
 
 /*!
@@ -160,10 +176,12 @@ void BrowserWindow::on_filterChange(const QString &text)
 
     QString cond;
 
-    if (_filterType == 3)
+    if (_filterType == 7)
         cond = "StudId,";
-    else if (_filterType == 5)
-        cond = "QuestId";
+    else if (_filterType == 8)
+        cond = "QuestId,";
+    else if (_filterType == 9)
+        cond = "ExamId,";
     cond += text;
     showAll(_view->topLevelItem(0), cond);
 }
@@ -227,7 +245,18 @@ bool BrowserWindow::showAll(QTreeWidgetItem *item, const QString &cond)
         }
         else if (first == "StudId")
         {
-            if (item->childCount())
+            if (!item->childCount())
+            {
+                if (item->text(Slot_Name).contains(cond.section(',',1)))
+                {
+                    condMatch = true;
+                }
+                done = true;
+            }
+        }
+        else if (first == "ExamId")
+        {
+            if (!item->childCount())
             {
                 if (item->text(Slot_Ident).contains(cond.section(',',1)))
                 {
