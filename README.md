@@ -1,15 +1,14 @@
-HUOM 1.8! Uusimmassa versiossa settings.ini on siirretty omaan kansioonsa, johon kerääntyy muita vastaavia tiedostoja. Jos haluat säilyttää vanhat asetukset, siirrä vanha .ini tiedosto 'settings' kansioon, mutta HUOMaa, että aikaisempien tenttien asetukset eivät enää vastaa uuden version tarpeita, joten ne kannattaa poistaa settings.ini tiedostosta käsin
+HUOM WINDOWS; Jostain syystä pdf-ikkuna zoomaa vastaukset joskus väärin. Tähän on tehty korjaava asetus yläpalkin "Näkymän korjaus" valikossa.
 
-HUOM WINDOWS, käytössä on jotain ongelmia, jotka esiintyvät joillain koneilla, mutta ei toisilla. Jos esimerkisi pdf-vastaukset zoomautuvat liikaa, kokeile toisella koneella. Jos PK toimii oikein yhdessä koneessa mutta ei toisessa, niin pyydän kertomaan tästä, ja koneiden mahdollisista eroista. Ongelma korjataan jos sen syy saadaan joskus selville.
-
-HUOM MAC, uusimmissa QT-versioissa on ongelmia tunnistaa ääkkösiä tiedostonimissä. Finderin kautta kirjoitetut ääkköset toimivat normaalisti, mutta terminaalin kautta (ja oletettavasti muista järjestelmistä) kirjoitetut tiedostonimet eivät näy QDirille.
-
-
-# PunaKynä - Matematiikan tehtävien/Sähköisten tenttien automaattitarkastaja
+# PunaKynä - Matematiikan tehtävien/Sähköisten tenttien tarkastaja
 
 PunaKynä on luotu helpottamaan sähköisissä tenttijärjestelmissä tehtyjä tenttejä, mikäli järjestelmät antavat tarkastajien ladata vastaukset lokaaliin kansioon. Samalla sen on tarkoitus toimia alustana tenttien automaattiselle tarkastamiselle. PunaKynä on osa diplomityötä sähköisten tenttien automaattitarkastamisesta <http://URN.fi/URN:NBN:fi:tty-201811012521>.
 
-## PunaKynän ja sen osien kääntäminen (kunhan lähdekoodi on Gitissä)
+PunaKynän uusimman version voi ladata sivluta <https://github.com/LaaksonenV/PunaKyna/releases/tag/v1.8.0.1b>.
+
+PunaKynä vaatii vielä testaamista, virheitä saattaa tulla vastaan, ja näistä on toivottavaa että ilmoitatte mahdollisimman pian, jotta korjaukset saadaan aloitettua.
+
+## PunaKynän ja sen osien kääntäminen
 
 Käyttöjärjestelmästä riippumatta Punakynä käyttää montaa ulkoista Qt-kirjastoa,
 jotka täytyy asentaa erikseen ennen itse Punakynän kääntämistä paikallisesti.
